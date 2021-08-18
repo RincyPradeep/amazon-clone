@@ -1,0 +1,36 @@
+.product{
+    background-color: rgb(253, 252, 252);
+    min-width:300px;
+    width: 100vw;
+    max-height:400px;
+    padding:20px;
+    margin:20px;
+}
+.product-price{
+    margin:10px 0;
+}
+.product-rating .MuiSvgIcon-root{
+    fill:#FFA41C !important;
+    /* box-shadow: #000 !important; */
+}
+.product-image{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.product-image img{
+    width:150px;
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+.product-image button{
+    background-color: #FFA41C;
+    color:#000;
+    padding:7px 7px;
+    border-radius: 5px;
+    border: 1px solid rgb(206, 158, 2);
+    outline:none;
+    width:150px;
+}

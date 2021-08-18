@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     background-color: #131921;
-    width:100vw;
+    max-width:100vw;
     height:50px;
     padding:5px 10px;
     position: sticky;
@@ -28,7 +28,7 @@
     width:100%;
 }
 .header-searchIcon{
-    background-color: #cd9042;
+    background-color: #FFA41C;
     padding: 5px;
 }
 
