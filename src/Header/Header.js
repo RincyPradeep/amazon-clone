@@ -1,14 +1,25 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 import './Header.css'
 import SearchIcon from '@material-ui/icons/Search'
 import ShoppingBasket from '@material-ui/icons/ShoppingBasket'
 import { useStateValue } from '../StateProvider'
+import { AuthContext ,FirebaseContext } from '../store/FirebaseContext'
+
 
 const Header = () => {
 
+    const {user} = useContext(AuthContext)
+    const {firebase} = useContext(FirebaseContext)
+    const history = useHistory()
+
     const [{basket}] = useStateValue();
     console.log(basket);
+
+    const handleSignOut =() =>{
+        firebase.auth().signOut();
+        history.push('/login')
+    }
 
     return (
         <nav className="header">
@@ -26,12 +37,13 @@ const Header = () => {
             {/* nav options */}
             <div className="header-nav">
                 <div className="header-link">
-                    <Link to="/login" className="header-link">
+                   
                         <div className="header-option">
-                            <span className="header-option-one">Hello Rincy</span>
-                            <span className="header-option-two">Sign In</span>
+                            <span className="display-name">{user ? `Hi, ${user.displayName}` : 
+                             <Link to="/login" className="header-link">Login</Link>}</span>
                         </div>
-                    </Link>
+                    
+                    <p className="header-option-one logout" onClick={handleSignOut}>{user && 'Logout'}</p>
 
                     <Link to="/" className="header-link">
                         <div className="header-option">
