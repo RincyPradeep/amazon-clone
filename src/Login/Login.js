@@ -31,7 +31,7 @@ const Login = () => {
             <img src="/images/amazon_logo_black.png" alt="logo" className="login-logo" />
             <div className="login">
             <form onSubmit={handleSignIn}>
-                <p className="login-head">Sign-In</p>
+                <p className="login-head">Login</p>
                 <div className="input">
                     <label><b>Email</b></label>
                     <input type="text" value={email} name="email"

@@ -16,9 +16,7 @@ const SignUp = () => {
     const {firebase} =useContext(FirebaseContext)
 
     const handleSignUp =(e) =>{
-        // console.log(name,mobile,email,password);
         e.preventDefault();
-        console.log(firebase);
         
         firebase.auth().createUserWithEmailAndPassword(email,password).then((result)=>{
             result.user.updateProfile({displayName:name}).then(()=>{
@@ -50,12 +48,12 @@ const SignUp = () => {
                             onChange={(e)=>setName(e.target.value)} required/>
                 </div>    
                 <div className="input">
-                    <label><b>Mobile number</b></label>
+                    <label><b>Mobile number (optional)</b></label>
                     <input type="text" value={mobile} name="mobile" 
-                            onChange={(e)=>setMobile(e.target.value)} required/>
+                            onChange={(e)=>setMobile(e.target.value)}/>
                 </div>  
                 <div className="input">
-                <label><b>Email (optional)</b></label>
+                <label><b>Email</b></label>
                     <input type="email" value={email} name="email"
                             onChange={(e)=>setEmail(e.target.value)} required/>
                 </div>
